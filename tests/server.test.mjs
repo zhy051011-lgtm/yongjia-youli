@@ -1,0 +1,12 @@
+import test,{before,after} from 'node:test';
+import assert from 'node:assert/strict';
+import {spawn} from 'node:child_process';
+import {once} from 'node:events';
+let proc,base='http://127.0.0.1:3189';
+before(async()=>{proc=spawn(process.execPath,['server.mjs'],{cwd:new URL('..',import.meta.url),env:{...process.env,PORT:'3189',DEEPSEEK_API_KEY:''},stdio:['ignore','pipe','pipe']});await Promise.race([once(proc.stdout,'data'),new Promise((_,reject)=>setTimeout(()=>reject(new Error('测试服务未启动')),8000).unref())]);});
+after(async()=>{proc?.kill();});
+test('没有密钥也能打开网页、资料和规则规划',async()=>{const r=await fetch(base);assert.equal(r.status,200);assert.match(await r.text(),/永嘉有礼/);const h=await(await fetch(base+'/api/health')).json();assert.equal(h.aiConfigured,false);const p=await fetch(base+'/api/plan',{method:'POST',body:JSON.stringify({profile:{duration:240}})});assert.equal(p.status,200);assert.ok((await p.json()).plan.stops.length);});
+test('AI 未配置时明确报错，不伪造回答',async()=>{const r=await fetch(base+'/api/agent',{method:'POST',body:JSON.stringify({message:'介绍苍坡'})});assert.equal(r.status,503);assert.match((await r.json()).error,/尚未配置/);});
+test('无效输入返回 400，服务仍可用',async()=>{const r=await fetch(base+'/api/plan',{method:'POST',body:'{"profile":{"duration":-4}}'});assert.equal(r.status,400);const bad=await fetch(base+'/api/plan',{method:'POST',body:'oops'});assert.equal(bad.status,400);assert.equal((await fetch(base+'/api/health')).status,200);});
+test('敏感文件和源代码不可作为静态文件读取',async()=>{for(const p of ['/.env','/server.mjs','/lib/catalog.mjs','/../.env','/%2e%2e/.env'])assert.equal((await fetch(base+p)).status,404);});
+test('拒绝跨站来源，避免网页盗用本地模型接口',async()=>{const r=await fetch(base+'/api/plan',{method:'POST',headers:{Origin:'https://other.example'},body:'{}'});assert.equal(r.status,403);});

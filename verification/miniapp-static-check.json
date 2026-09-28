@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checked": [
+    "pages/home/home.js",
+    "pages/home/home.json",
+    "pages/home/home.wxml",
+    "pages/plan/plan.js",
+    "pages/plan/plan.json",
+    "pages/plan/plan.wxml",
+    "pages/library/library.js",
+    "pages/library/library.json",
+    "pages/library/library.wxml",
+    "pages/result/result.js",
+    "pages/result/result.json",
+    "pages/result/result.wxml"
+  ],
+  "scope": "页面文件、JSON、JavaScript语法、事件绑定与静态素材；不是微信开发者工具编译或真机验证"
+}

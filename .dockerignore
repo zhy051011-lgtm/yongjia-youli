@@ -1,0 +1,11 @@
+.env
+.git
+.cache
+artifacts
+node_modules
+miniprogram
+media
+docs
+tests
+scripts
+*.zip

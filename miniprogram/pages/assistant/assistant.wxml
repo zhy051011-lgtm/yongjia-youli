@@ -1,0 +1,36 @@
+<view class="page assistant-page">
+  <view class="eyebrow">AI TRAVEL BUTLER</view>
+  <view class="title">文旅管家</view>
+  <view class="subtle">随便聊聊永嘉的山水、古村、天气或行程，我会先听懂再回应。</view>
+
+  <view class="chat-list">
+    <block wx:for="{{messages}}" wx:key="index">
+      <view class="chat-row {{item.role}}">
+        <view class="bubble {{item.role}}">
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+
+    <view wx:if="{{busy}}" class="chat-row assistant">
+      <view class="bubble assistant loading">
+        <text>{{loadingText}}</text>
+      </view>
+    </view>
+
+    <view wx:if="{{error}}" class="error">{{error}}</view>
+
+    <view wx:if="{{aiSteps.length}}" class="steps-card">
+      <view wx:for="{{aiSteps}}" wx:key="name" class="small step-item">{{item.name}}：{{item.detail}}</view>
+    </view>
+  </view>
+
+  <view class="quick-chips" wx:if="{{messages.length <= 1}}">
+    <view class="chip" wx:for="{{suggestions}}" wx:key="*this" bindtap="useSuggestion" data-text="{{item}}">{{item}}</view>
+  </view>
+
+  <view class="input-bar">
+    <input class="chat-input" placeholder="例如：帮我推荐一条古村路线…" value="{{message}}" maxlength="1600" bindinput="input" confirm-type="send" bindconfirm="send"/>
+    <button class="send-btn" loading="{{busy}}" disabled="{{busy}}" bindtap="send">发送</button>
+  </view>
+</view>

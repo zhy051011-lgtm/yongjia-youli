@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: yongjia-youli
+    env: docker
+    region: singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_MODEL
+        value: deepseek-flash
+      - key: PORT
+        value: 3188
+      - key: ALLOWED_ORIGIN
+        sync: false
+    healthCheckPath: /api/health

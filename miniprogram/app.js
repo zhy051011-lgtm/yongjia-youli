@@ -1,0 +1,1 @@
+App({globalData:{apiBase:'http://127.0.0.1:3188',plan:null,profile:null},onLaunch(){this.globalData.apiBase=wx.getStorageSync('youli-api-base')||this.globalData.apiBase;this.globalData.plan=wx.getStorageSync('youli-plan')||null;}});

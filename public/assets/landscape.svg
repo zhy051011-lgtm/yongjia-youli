@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 650" fill="none">
+<defs><linearGradient id="sky" x2="0" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#e6ecdf"/><stop offset="1" stop-color="#f1ecd9"/></linearGradient><linearGradient id="river" x2="200" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#9eb9ac"/><stop offset="1" stop-color="#dbe4d7"/></linearGradient><pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".6" fill="#1c4834" opacity=".1"/></pattern><g id="house"><path d="M0 23H66V65H0Z" fill="#e9e4d2"/><path d="M-8 23 31 0 77 23Z" fill="#334d41"/><path d="M-6 25H73" stroke="#e9e4d2" stroke-width="3"/><path d="M11 36H23V49H11ZM39 34H52V65H39Z" fill="#71816f"/><path d="M1 60H65" stroke="#b9b9a4" stroke-width="2"/></g><g id="tree"><path d="M0 0V64M0 35-14 17M0 45 18 22" stroke="#385245" stroke-width="4"/><ellipse cy="5" rx="23" ry="39" fill="#56745b"/><ellipse cx="-16" cy="20" rx="17" ry="23" fill="#647f64"/></g></defs>
+<rect width="920" height="650" rx="14" fill="url(#sky)"/>
+<circle cx="689" cy="130" r="55" fill="#d6a86d" opacity=".7"/>
+<path d="M0 340 70 220 120 243 207 110 265 158 340 102 386 186 449 141 524 254 608 143 700 234 778 100 853 166 920 80V650H0Z" fill="#bac8b4"/>
+<path d="M0 375 74 300 160 356 259 199 340 245 391 215 457 319 506 255 570 353 698 239 756 287 819 243 920 316V650H0Z" fill="#96ab91"/>
+<path d="M0 472 96 383 204 412 308 340 405 402 481 352 608 438 710 388 792 400 920 345V650H0Z" fill="#66856e"/>
+<path d="M465 357C400 409 601 408 559 454S283 468 386 526 469 584 230 650H831C846 583 554 538 658 499S547 438 520 410 548 377 465 357Z" fill="url(#river)"/>
+<path d="M0 510C100 454 198 462 310 496S371 592 262 650H0Z" fill="#365f4b"/>
+<path d="M724 466C795 422 892 450 920 461V650H821C850 588 661 528 724 466Z" fill="#7d9376"/>
+<path d="M0 581C70 550 153 547 246 558M0 608C75 576 150 576 255 588M0 635C100 603 150 610 258 620" stroke="#9cb395" stroke-width="3" opacity=".6"/>
+<path d="M693 475C754 460 839 477 920 490M714 493C783 490 851 505 920 518M755 521C820 522 885 546 920 556" stroke="#b2bea0" stroke-width="3"/>
+<g transform="translate(287 370) scale(.88)"><use href="#house"/><use href="#house" x="72" y="28"/><use href="#house" x="-73" y="20"/><use href="#house" x="2" y="75"/><path d="M87 90H127V135H87Z" fill="#eee8d6"/><path d="M82 88H133L109 75Z" fill="#334d41"/></g>
+<g transform="translate(689 405) scale(.68)"><use href="#house"/><use href="#house" x="68" y="18"/></g>
+<use href="#tree" x="175" y="412"/><use href="#tree" x="221" y="456"/><use href="#tree" x="110" y="488"/><use href="#tree" transform="translate(806 427) scale(.8)"/>
+<path d="M427 489Q472 457 517 491" stroke="#eee6cb" stroke-width="13"/><path d="M428 482Q472 449 517 484" stroke="#586e59" stroke-width="3"/>
+<path d="M637 174q12-11 25 0M662 174q12-11 25 0M730 190q9-8 18 0M748 190q9-8 18 0" stroke="#5c7161" stroke-width="2"/>
+<path d="M485 548H536L524 555H494Z" fill="#5f5f46"/><path d="M509 548V531" stroke="#5f5f46" stroke-width="2"/>
+<rect width="920" height="650" rx="14" fill="url(#grain)"/>
+<rect x="827" y="34" width="45" height="87" rx="3" fill="#b55637"/><text x="849" y="65" text-anchor="middle" fill="#fff5df" font-size="23" font-family="serif">楠</text><text x="849" y="98" text-anchor="middle" fill="#fff5df" font-size="23" font-family="serif">溪</text>
+</svg>

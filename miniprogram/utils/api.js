@@ -1,0 +1,3 @@
+function request(path,data){return new Promise((resolve,reject)=>{const base=getApp().globalData.apiBase;wx.request({url:base+path,method:data?'POST':'GET',data:data,header:{'Content-Type':'application/json'},timeout:path==='/api/agent'?115000:15000,success(r){if(r.statusCode>=200&&r.statusCode<300)resolve(r.data);else reject(new Error(r.data&&r.data.error||'请求未完成'));},fail(){reject(new Error('无法连接后端。请检查首页服务地址；真机需使用同一局域网的电脑 IP 或已配置的 HTTPS 域名。'));}});});}
+function savePlan(plan){getApp().globalData.plan=plan;getApp().globalData.profile=plan.profile;wx.setStorageSync('youli-plan',plan);}
+module.exports={request,savePlan};

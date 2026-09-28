@@ -1,0 +1,15 @@
+{
+  "available": true,
+  "date": "2026-09-24",
+  "min": 21.6,
+  "max": 29.8,
+  "rainProbability": 31,
+  "code": 3,
+  "scope": "县域参考点预报，非景点逐点预报",
+  "coordinates": {
+    "latitude": 28.15,
+    "longitude": 120.53
+  },
+  "retrievedAt": "2026-09-24T10:06:53.293Z",
+  "source": "https://open-meteo.com/"
+}

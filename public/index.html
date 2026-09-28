@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#244d40"><title>永嘉有礼 · 把时间留给山水与人文</title><link rel="icon" href="/assets/landscape.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body>
+<header class="site-header"><a class="brand" href="#home"><span class="brand-mark">永</span><span>永嘉有礼<small>YONGJIA FIELD NOTES</small></span></a><nav aria-label="主导航"><button data-view="home" class="active">发现永嘉</button><button data-view="planner">我的行程</button><button data-view="library">文化手册</button></nav><button class="status" id="status" title="查看服务状态"><i></i><span>正在连接</span></button></header>
+<main>
+<section id="home-view" class="view">
+  <div class="hero"><div class="hero-copy"><p class="eyebrow">浙江 · 永嘉 / NANXI RIVER</p><h1>把时间留给<br><em>山水与人文。</em></h1><p class="hero-desc">走进一座古村，读懂一方水土。<br>从你的兴趣出发，安排一段不赶路的文化时光。</p><button class="primary" data-view="planner">规划我的一天 <span>↗</span></button><div class="hero-foot"><span class="tiny-seal">有据</span><span>有出处的文化资料<br>随时调整的旅行安排</span></div></div><div class="hero-art"><img src="/assets/landscape.svg" alt="楠溪江山水与古村的原创风格插画，并非实景地图"><div class="art-caption"><span>一江山水 · 一方人文</span><span>01 / 永嘉</span></div></div></div>
+  <div class="section-top"><div><p class="eyebrow">FOLLOW YOUR CURIOSITY</p><h2>这一次，想怎样遇见永嘉？</h2></div><button class="text-btn" data-view="library">翻开文化手册 ↗</button></div>
+  <div class="theme-grid"><button class="theme-card theme-village" data-theme="古村"><span class="theme-no">01</span><div class="mini-houses"><i></i><i></i><i></i></div><span class="theme-label">古村慢行</span><strong>走进耕读人家</strong><span>芙蓉 · 苍坡 · 丽水街 <b>↗</b></span></button><button class="theme-card theme-craft" data-theme="手作"><span class="theme-no">02</span><div class="vase"><i></i></div><span class="theme-label">工艺寻访</span><strong>触摸一抹瓯窑青</strong><span>了解工艺 · 先确认体验 <b>↗</b></span></button><button class="theme-card theme-field" data-theme="自然"><span class="theme-no">03</span><div class="field-lines"><i></i><i></i><i></i><i></i></div><span class="theme-label">田野观察</span><strong>沿山势，读四季</strong><span>茗岙梯田 · 山地村落 <b>↗</b></span></button></div>
+  <div class="promise-strip"><p><span>01</span> 先理解你的时间与兴趣</p><p><span>02</span> 每个推荐，都能查看依据</p><p><span>03</span> 少一点赶路，多一点停留</p></div>
+</section>
+<section id="planner-view" class="view" hidden>
+  <div class="section-top plan-heading"><div><p class="eyebrow">YOUR DAY, YOUR PACE</p><h1 class="page-title">安排一段，刚刚好的时光。</h1></div><button class="text-btn" id="restore">恢复上次行程 ↶</button></div>
+  <div class="workspace"><aside class="planner-form"><div class="form-top"><span class="mini-seal">行</span><div><h2>从你出发</h2><p>先把一天的节奏定下来</p></div></div><form id="trip-form">
+  <div class="two-cols"><label>出行日期<input type="date" name="date" required></label><label>首站开始<input type="time" name="start" value="09:00" required></label></div>
+  <div class="two-cols"><label>和谁一起<select name="group"><option>亲子</option><option>朋友</option><option>情侣</option><option>独行</option></select></label><label>可用时间<select name="duration"><option value="240">半天 · 4 小时</option><option value="480">一天 · 8 小时</option><option value="120">小憩 · 2 小时</option></select></label></div>
+  <fieldset><legend>你更喜欢什么？</legend><div class="interest-options" id="interests"></div></fieldset>
+  <div class="two-cols"><label>出行方式<select name="transport"><option>自驾</option><option>公共交通</option></select></label><label>探索片区<select name="zone"><option>自动</option><option>岩头</option><option>三江</option><option>茗岙</option><option>岩坦</option></select></label></div>
+  <label>每次转场预留<select name="transfer"><option value="30">30 分钟</option><option value="15">15 分钟</option><option value="45">45 分钟</option><option value="60">60 分钟</option></select></label><p class="field-help">由你设置的缓冲时间，并非地图估算；往返首末站的交通需另留。</p>
+  <label class="check-line"><input type="checkbox" name="slow"> 少走路，给停留多一点时间</label><label class="check-line"><input type="checkbox" name="rain"> 仅找雨天备选（手动条件）</label>
+  <button type="submit" class="primary full" id="generate">生成我的行程 <span>→</span></button><p class="form-foot">资料可溯源 · 时间由规则计算</p></form></aside>
+  <div class="plan-main"><div id="plan-empty" class="empty-state"><img src="/assets/landscape.svg" alt="山水古村插画"><p class="eyebrow">A LITTLE ROOM FOR WONDER</p><h2>你的下一段故事，<br>从一个小小的选择开始。</h2><p>选好时间与兴趣，我们就把文化资源<br>整理成一份可以继续调整的行程。</p></div><div id="plan-result" aria-live="polite"></div></div></div>
+</section>
+<section id="library-view" class="view" hidden><div class="section-top"><div><p class="eyebrow">A GUIDE WITH SOURCES</p><h1 class="page-title">每一段故事，都有来处。</h1><p class="subtle">文化背景与历史活动可查证；当天开放、费用与课程另行确认。</p></div></div><label class="search-label">搜索文化手册<input type="search" id="resource-search" placeholder="找一个古村、一门工艺，或一个片区…"></label><div id="catalog" class="catalog-grid"></div><p class="library-note">“探索任务”和建议停留时长为本产品的策划内容，不是官方活动安排。资料核验日期见各条来源。</p></section>
+</main>
+<footer><span>永嘉有礼 <span class="footer-dot">·</span> 有据可循的文化旅行</span><span>AI + OPC / 2026 参赛原型</span></footer>
+<button class="assistant-launch" id="open-assistant"><span>✳</span> 和文化管家聊聊</button>
+<dialog id="assistant"><div class="dialog-head"><div><span class="eyebrow">YOUR CULTURAL COMPANION</span><h2>永嘉文化管家</h2></div><button class="icon-btn" id="close-assistant" aria-label="关闭文化管家">×</button></div><p class="assistant-state" id="assistant-state"></p><div id="chat-messages" class="chat-messages"><div class="chat-bubble bot">想了解某个古村，或给行程换一种节奏？告诉我你的想法。AI 启用后会查询资料、调用规划工具，结果会同步到行程。</div></div><form id="chat-form"><label class="sr-only" for="chat-input">向文化管家提问</label><textarea id="chat-input" placeholder="例如：把行程压缩到两小时，保留古村…" maxlength="1600" rows="2"></textarea><button class="primary" id="chat-send">发送 ↑</button></form></dialog>
+<dialog id="info-dialog"><div class="dialog-head"><h2 id="info-title"></h2><button class="icon-btn" id="close-info" aria-label="关闭提示">×</button></div><p id="info-content"></p></dialog><div id="toast" role="status" hidden></div>
+</body></html>
